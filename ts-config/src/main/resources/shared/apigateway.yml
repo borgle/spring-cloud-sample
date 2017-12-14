@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    feign:              # clientfeign 路由方向配置
+      path: /feign/**   # /feign/demo.json--> http://clientfeign/demo.json
+      serviceId: clientfeign
+      stripPrefix: true
+    clientribbon:      # clientribbon 路由方向配置，采用省略 serviceId 的方式
+      path: /ribbon/**  # /ribbon/demo.json--> http://clientribbon/demo.json
+      stripPrefix: true
+
+hystrix:
+  command:
+    feign: # --> feign client
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+    clientribbon: # --> ribbon client
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000

@@ -1,0 +1,23 @@
+server:
+  port: ${config.port:8011}
+
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${registry.port:8761}/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+

@@ -1,0 +1,6 @@
+server:
+  port: 8012
+
+business:
+  a:
+    myabc: i love english, i love you

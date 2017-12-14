@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: apigateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configserver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${registry.port:8761}/eureka/

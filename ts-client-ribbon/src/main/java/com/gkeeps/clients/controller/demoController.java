@@ -1,0 +1,25 @@
+package com.gkeeps.clients.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gkeeps.clients.service.demoService;
+
+@RestController
+public class demoController {
+
+    @Autowired
+    private demoService service;
+
+    @RequestMapping("/test")
+    public String test() throws Exception {
+        return service.test();
+    }
+
+    @RequestMapping("/timeout")
+    public String timeout() throws Exception {
+        return service.timeout();
+    }
+
+}

@@ -3,6 +3,8 @@ spring:
     name: clientribbon
   cloud:
     config:
+      username: ${CONFIG_SERVICE_USERNAME:root}
+      password: ${CONFIG_SERVICE_PASSWORD:password}
       discovery:
         enabled: true
         serviceId: configserver
@@ -10,4 +12,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:${registry.port:8761}/eureka/
+      defaultZone: http://localhost:${REGISTRY_SERVER_PORT:8761}/eureka/

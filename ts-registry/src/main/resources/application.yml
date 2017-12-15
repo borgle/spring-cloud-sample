@@ -1,5 +1,5 @@
 server:
-  port: ${registry.port:8761}
+  port: ${REGISTRY_SERVER_PORT:8761}
 
 spring:
   application:
@@ -10,5 +10,5 @@ eureka:
     prefer-ip-address: true # 优先采用 ip 的方式
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
-    fetch-registry: true # 取消同步其他节点数据，使自己成为单独的注册中心
+    fetch-registry: false # 取消同步其他节点数据，使自己成为单独的注册中心
     register-with-eureka: false # 取消同步自身节点数据，使自己成为单独的注册中心

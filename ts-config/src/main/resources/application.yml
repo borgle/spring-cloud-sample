@@ -1,5 +1,5 @@
 server:
-  port: ${config.port:8011}
+  port: ${CONFIG_SERVER_PORT:8011}
 
 spring:
   application:
@@ -15,9 +15,12 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:${registry.port:8761}/eureka/
+      defaultZone: http://localhost:${REGISTRY_SERVER_PORT:8761}/eureka/
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 
-
+security:
+  user:
+    name: ${CONFIG_SERVICE_USERNAME:root}
+    password: ${CONFIG_SERVICE_PASSWORD:password}

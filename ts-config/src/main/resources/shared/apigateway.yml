@@ -1,14 +1,19 @@
 server:
   port: 8080
 
+# for security, hidden the header 'x-application-context'
+management:
+  addApplicationContextHeader: false
+
 zuul:
+  ignoredServices: '*' # ignore unconfigured routes
   routes:
-    feign:              # clientfeign 路由方向配置
-      path: /feign/**   # /feign/demo.json--> http://clientfeign/demo.json
+    feign:              # client feign direction
+      path: /feign/**   # /feign/demo.json --> http://clientfeign/demo.json
       serviceId: clientfeign
       stripPrefix: true
-    clientribbon:      # clientribbon 路由方向配置，采用省略 serviceId 的方式
-      path: /ribbon/**  # /ribbon/demo.json--> http://clientribbon/demo.json
+    clientribbon:      # client ribbon route direction，ignore 'serviceId'
+      path: /ribbon/**  # /ribbon/demo.json --> http://clientribbon/demo.json
       stripPrefix: true
 
 hystrix:

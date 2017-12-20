@@ -22,6 +22,7 @@ java -jar ./ts-gateway/target/api-gateway.jar
 java -jar ./ts-client-feign/target/client-feign.jar
 # java -jar ./ts-client-ribbon/target/client-ribbon.jar
 java -jar ./ts-business-a/target/business-a.jar
+java -Dspring.profiles.active=another -jar ./ts-business-a/target/business-a.jar
 ```
 
 ## check

@@ -3,4 +3,4 @@ server:
 
 business:
   a:
-    myabc: i love english, i love you
+    myabc: i love english, i love you. default endpoint.

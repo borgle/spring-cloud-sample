@@ -7,8 +7,8 @@ spring:
 
 eureka:
   instance:
-    prefer-ip-address: true # ÓÅÏÈ²ÉÓÃ ip µÄ·½Ê½
+    prefer-ip-address: true # ä¼˜å…ˆé‡‡ç”¨ ip çš„æ–¹å¼
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
-    fetch-registry: false # È¡ÏûÍ¬²½ÆäËû½ÚµãÊı¾İ£¬Ê¹×Ô¼º³ÉÎªµ¥¶ÀµÄ×¢²áÖĞĞÄ
-    register-with-eureka: false # È¡ÏûÍ¬²½×ÔÉí½ÚµãÊı¾İ£¬Ê¹×Ô¼º³ÉÎªµ¥¶ÀµÄ×¢²áÖĞĞÄ
+    fetch-registry: false # å–æ¶ˆåŒæ­¥å…¶ä»–èŠ‚ç‚¹æ•°æ®ï¼Œä½¿è‡ªå·±æˆä¸ºå•ç‹¬çš„æ³¨å†Œä¸­å¿ƒ
+    register-with-eureka: false # å–æ¶ˆåŒæ­¥è‡ªèº«èŠ‚ç‚¹æ•°æ®ï¼Œä½¿è‡ªå·±æˆä¸ºå•ç‹¬çš„æ³¨å†Œä¸­å¿ƒ

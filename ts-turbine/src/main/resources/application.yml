@@ -1,0 +1,11 @@
+server:
+  port: ${TURBINE_SERVER_PORT:8014}
+
+turbine:
+  app-config: clientfeign
+  cluster-name-expression: new String("default")
+
+security:
+  user:
+    name: ${TURBINE_SERVER_USERNAME:turbine}
+    password: ${TURBINE_SERVER_PASSWORD:password}

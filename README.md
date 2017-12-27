@@ -18,7 +18,8 @@ git clone https://github.com/yoker/spring-cloud-sample.git --depth=1
 ```bash
 java -jar ./ts-registry/target/registry-server.jar
 java -jar ./ts-config/target/config-server.jar
-java -jar ./ts-zipkin/target/zipkin-server.jar 
+java -jar ./ts-zipkin/target/zipkin-server.jar
+java -jar ./ts-turbine/target/turbine-server.jar
 java -jar ./ts-gateway/target/api-gateway.jar
 java -jar ./ts-client-feign/target/client-feign.jar
 # java -jar ./ts-client-ribbon/target/client-ribbon.jar
@@ -35,7 +36,8 @@ sleep 30
 curl http://localhost:8080/feign/test
 ```
 ## monitor
-Visit: http://localhost:8012/
+Visit zipkin: http://localhost:8012/
+Visit hystrix-dashboard: http://localhost:8013/hystrix
 
 ## other
 Best wishes! Thanks.

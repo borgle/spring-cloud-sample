@@ -1,0 +1,9 @@
+server:
+  port: 8012
+
+security:
+  user:
+    name: ${ZIPKIN_SERVER_USERNAME:zipkin}
+    password: ${ZIPKIN_SERVER_PASSWORD:password}
+  basic:
+    enabled: false # see https://github.com/spring-cloud/spring-cloud-sleuth/pull/815, you can open it when the pull has received

@@ -2,3 +2,13 @@ eureka:
   instance:
     preferIpAddress: true
     instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+
+spring:
+  zipkin:
+    baseUrl: http://${ZIPKIN_SERVER_USERNAME:zipkin}:${ZIPKIN_SERVER_PASSWORD:password}@zipkinserver/
+    locator:
+      discovery:
+        enabled: true
+  sleuth:
+    sampler:
+      percentage: 1.0 # 采样率 1.0 == 100%

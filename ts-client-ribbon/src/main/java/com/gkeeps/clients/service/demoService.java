@@ -28,7 +28,7 @@ public class demoService {
 
     @HystrixCommand(fallbackMethod = "timeoutFallback")
     public String timeout() {
-        String reqURL = "http://serviceA/test";
+        String reqURL = "http://business-a/test";
         return restTemplate.getForEntity(reqURL, String.class).getBody();
     }
 

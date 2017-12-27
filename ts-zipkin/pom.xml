@@ -10,14 +10,14 @@
     </parent>
 
     <properties>
-        <maven.package.finalName>api-gateway</maven.package.finalName>
+        <maven.package.finalName>zipkin-server</maven.package.finalName>
     </properties>
 
-    <artifactId>api-gateway</artifactId>
+    <artifactId>zipkin-server</artifactId>
     <packaging>jar</packaging>
 
-    <name>api-gateway</name>
-    <description>api gateway</description>
+    <name>zipkin-server</name>
+    <description>zipkin server</description>
 
     <dependencies>
         <dependency>
@@ -29,16 +29,16 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-ui</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
 

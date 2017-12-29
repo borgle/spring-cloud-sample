@@ -19,6 +19,10 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    # if you has depended on spring-boot-starter-security, the below setting for spring-boot-admin
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
 
 security:
   user:

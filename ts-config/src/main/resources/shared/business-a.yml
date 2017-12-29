@@ -4,3 +4,7 @@ server:
 business:
   a:
     myabc: i love english, i love you. default endpoint.
+
+# if you hasn't depended on spring-boot-starter-security.setting enabled=false for spring-boot-admin,
+# otherwise delete below line..
+management.security.enabled: false

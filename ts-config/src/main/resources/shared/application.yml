@@ -2,6 +2,9 @@ eureka:
   instance:
     preferIpAddress: true
     instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+    metadataMap: # if you has depended on spring-boot-starter-security, the below setting for spring-boot-admin
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
 
 spring:
   zipkin:
@@ -11,4 +14,4 @@ spring:
         enabled: true
   sleuth:
     sampler:
-      percentage: 1.0 # 采样率 1.0 == 100%
+      percentage: 1.0 # 采样率 1.0 == 100%

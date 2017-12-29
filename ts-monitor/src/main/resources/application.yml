@@ -1,0 +1,23 @@
+server:
+  port: ${MONITOR_SERVER_PORT:8010}
+
+security:
+  user:
+    name: ${MONITOR_SERVER_USERNAME:monitor}
+    password: ${MONITOR_SERVER_PASSWORD:password}
+
+turbine:
+  app-config: clientfeign
+  cluster-name-expression: new String("default")
+
+spring.boot.admin:
+  routes:
+    endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+  turbine:
+    clusters: default
+    location: ${spring.application.name}
+
+debug: true
+logging:
+  level:
+    de.codecentric: debug

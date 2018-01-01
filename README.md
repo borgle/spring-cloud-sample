@@ -39,9 +39,10 @@ curl http://localhost:8080/feign/test
 ```
 
 ## monitor
-Visit zipkin: http://localhost:8012/
-Visit hystrix-dashboard: http://localhost:8013/hystrix
-Visit turbine-stream: http://localhost:8014/turbine.stream
+* Visit zipkin: http://localhost:8012/
+* ~~Visit hystrix-dashboard: http://localhost:8013/hystrix~
+* ~~Visit turbine-stream: http://localhost:8014/turbine.stream~~
+* Visit monitor: http://localhost:8010/
 
 ## other
 Best wishes! Thanks.

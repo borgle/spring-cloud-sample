@@ -1,7 +1,0 @@
-server:
-  port: ${HYSTRIX_SERVER_PORT:8013}
-
-security:
-  user:
-    name: ${HYSTRIX_SERVER_USERNAME:hystrix}
-    password: ${HYSTRIX_SERVER_PASSWORD:password}

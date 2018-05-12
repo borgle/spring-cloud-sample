@@ -54,9 +54,7 @@
         <module>ts-registry</module>
         <module>ts-config</module>
         <module>ts-gateway</module>
-        <module>ts-hystrix</module>
         <module>ts-zipkin</module>
-        <module>ts-turbine</module>
         <module>ts-monitor</module>
         <module>ts-business-a</module>
         <module>ts-client-feign</module>

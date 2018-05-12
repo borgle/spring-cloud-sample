@@ -1,0 +1,7 @@
+server:
+  port: ${SERVICE_PORT:8032}
+
+security:
+  user:
+    name: ${SERVICE_USERNAME:service}
+    password: ${SERVICE_PASSWORD:password}

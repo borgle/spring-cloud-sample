@@ -1,12 +1,6 @@
-server:
-  port: 8080
-
 # for security, hidden the header 'x-application-context'
 management:
   addApplicationContextHeader: false
-  # if you hasn't depended on spring-boot-starter-security.setting enabled=false for spring-boot-admin,
-  # otherwise delete below line..
-  security.enabled: false
 
 zuul:
   ignoredServices: '*' # ignore unconfigured routes

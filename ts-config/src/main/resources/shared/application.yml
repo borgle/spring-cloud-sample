@@ -1,17 +1,51 @@
+management.endpoints.web.exposure.include: "*"
+management.endpoint.health.show-details: ALWAYS
+spring.jmx.enabled: false
+
 eureka:
   instance:
-    preferIpAddress: true
-    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
-    metadataMap: # if you has depended on spring-boot-starter-security, the below setting for spring-boot-admin
-      user.name: ${security.user.name}
-      user.password: ${security.user.password}
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    metadata-map: # if you has depended on spring-boot-starter-security, the below setting for spring-boot-admin
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
 
 spring:
   zipkin:
-    baseUrl: http://${ZIPKIN_SERVER_USERNAME:zipkin}:${ZIPKIN_SERVER_PASSWORD:password}@zipkinserver/
-    locator:
-      discovery:
-        enabled: true
+    base-url: http://${ZIPKIN_SERVER_USERNAME:zipkin}:${ZIPKIN_SERVER_PASSWORD:password}@zipkinserver/
+    locator.discovery.enabled: false
+    sender.type: WEB
   sleuth:
-    sampler:
-      percentage: 1.0 # 采样率 1.0 == 100%
+    sampler.percentage: 1.0 # 采样率 1.0 == 100%
+    web.client.enabled: true
+
+hystrix.command:
+  default: # --> default
+    execution:
+      isolation:
+        thread:
+          timeoutInMilliseconds: 3000
+  feign: # --> feign client
+    execution:
+      isolation:
+        thread:
+          timeoutInMilliseconds: 5000
+  clientribbon: # --> ribbon client
+    execution:
+      isolation:
+        thread:
+          timeoutInMilliseconds: 9000
+
+ribbon:
+  ReadTimeout: 60000 # case sensitive
+  ConnectTimeout: 60000 # case sensitive
+
+# for DEBUG
+security.ignored: /**
+logging:
+  level:
+    org.apache.coyote.http11.Http11InputBuffer: DEBUG
+    org.apache.coyote.http11.Http11OutputBuffer: DEBUG
+    org.springframework.security: DEBUG
+    com.gkeeps: DEBUG
+    org.springframework.cloud.sleuth: DEBUG

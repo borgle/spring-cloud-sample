@@ -1,27 +1,21 @@
 # for security, hidden the header 'x-application-context'
-management:
-  addApplicationContextHeader: false
+management.server:
+  add-application-context-header: false
 
-zuul:
-  ignoredServices: '*' # ignore unconfigured routes
-  routes:
-    feign:              # client feign direction
-      path: /feign/**   # /feign/demo.json --> http://clientfeign/demo.json
-      serviceId: clientfeign
-      stripPrefix: true
-    clientribbon:      # client ribbon route direction，ignore 'serviceId'
-      path: /ribbon/**  # /ribbon/demo.json --> http://clientribbon/demo.json
-      stripPrefix: true
-
-hystrix:
-  command:
-    feign: # --> feign client
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 3000
-    clientribbon: # --> ribbon client
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 3000
+spring:
+  cloud:
+    gateway:
+      discovery.locator.enabled: true
+      routes:
+      - id: feign
+        uri: lb://clientfeign
+        predicates:
+        - Path=/feign/**
+        filters:
+        - StripPrefix=1
+      - id: ribbon
+        uri: lb://clientribbon
+        predicates:
+        - Path=/ribbon/**
+        filters:
+        - StripPrefix=1

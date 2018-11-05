@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.gkeeps.core.configuration.ZipkinRestTemplateCustomizer
+  com.gkeeps.core.configuration.TsAutoConfiguration

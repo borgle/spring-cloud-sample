@@ -1,7 +1,7 @@
 server:
   port: ${MONITOR_SERVER_PORT:8010}
 
-security:
+spring.security:
   user:
     name: ${MONITOR_SERVER_USERNAME:monitor}
     password: ${MONITOR_SERVER_PASSWORD:password}

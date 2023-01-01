@@ -6,7 +6,7 @@ You need jdk 1.8 or later.
 
 ## clone
 ```bash
-git clone https://github.com/yoker/spring-cloud-sample.git --depth=1
+git clone https://github.com/borgle/spring-cloud-sample.git --depth=1
 ```
 
 ## build
